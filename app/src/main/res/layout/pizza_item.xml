@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Permite listar elementos dentro estableciendo un orden definido por el atributo orientation (vertical, horizontal) -->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-    <!-- Permite listar elementos dentro manejando la disposicion dentro por la gravedad o peso de los elementos (permite solapamiento) -->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-    <!-- Muestra una imagen -->
     <ImageView
         android:id="@+id/foto"
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:scaleType="centerCrop"/>
-    <!-- Conocido como label comunmente, muestra texto -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
