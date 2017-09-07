@@ -1,29 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- El LinearLayout dispondra de los elementos en la orientacion definida en
-          su atributo orientation, vertical (caso actual) u horizontal.
-
-     En este momento este esta siendo el layout padre de todos en la jerarquia. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/pizza_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
     android:orientation="vertical">
-
-
-    <!-- La etiqueta include importa el contenido del layout especificado dentro del actual.
-         El atributo layout es el que define que layout importar (cual, de donde). -->
-    <include layout="@layout/muzzarella_item"/>
-
-    <include layout="@layout/napolitana_item"/>
-
-    <include layout="@layout/jamon_item"/>
-
-    <!-- TODO: El problema de este encare es que tengo que definir un layout especifico para cada
-         TODO: variante que exista de Pizza. Teniendo 3 elementos no parece tanto trabajo,
-         TODO: ¿Pero si tuviera 20? ¿Y si la lista variara con el tiempo? Tendria que sacar
-         TODO: una actualizacion de la app por cada variacion... Esto no escala, y es
-         TODO: extremadamente costoso de mantener en el tiempo (esfuerzo, tiempo, etc) -->
-
-    <!-- Recuerden que todas las etiquetas xml que se hayan abierto se deben cerrar, inline o no -->
 </LinearLayout>
