@@ -6,14 +6,22 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.gson.annotations.Expose;
+
 /**
  * Clase modelo de la Pizza.
  */
 public class Pizza {
-    private Context context;
+    private transient Context context;
     private String nombre;
     private int fotoId;
     private double precio;
+
+
+    //Para funcionar Gson necesita que el constructor sin parametros este definido en las
+    //clases que serializa y deserializa ya que instancia un objeto con este constructor
+    //y setea sus parametros con sus seters.
+    public Pizza() {}
 
     /**
      * Modelo de Pizza con los minimos parametros necesarios para ser definida (en nuestro modelo de negocios).

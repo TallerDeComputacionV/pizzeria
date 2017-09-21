@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+
 /**
  *  OnClickListener para las vistas de articulos de Pizza
  */
@@ -25,17 +27,16 @@ public class PizzaOnClickListener implements View.OnClickListener{
     }
 
     @Override
-    //Actualizamos el metodo onClick para que redirija hacia el detalle de la pizza clickeada ademas del mensaje Toast.
     public void onClick(View view) {
         Toast.makeText(context, pizza.getNombre(), Toast.LENGTH_SHORT).show();
-        //Se crea un intent especificando el contexto del que se parte y el .class del activity destino.
         Intent intent = new Intent(context, DetailsActivity.class);
-        //Agregar extras es opcional, pero necesario para pasar informacion entre acitivties (este es un metodo, hay otros, ya los veremos).
-        intent.putExtra("nombre", pizza.getNombre());
-        intent.putExtra("fotoId", pizza.getFotoId());
-        intent.putExtra("precio", pizza.getPrecio());
-        //Con este metodo se inicia la transicion del intent y queda en el backstack el activity del que venimos para ser recuperado con la
-        //accion backpress.
+        //Utilizamos la libreria Gson para serializar la clase pizza con todos sus atributos.
+        String pizzaSerializada = new Gson().toJson(pizza);
+        //Los beneficios de serializar la pizza son que nos olvidamos cuales son sus atributos
+        //a serializar a mano, ya que se encarga la libreria (en este caso la elegida es Gson).
+        //Y en todos lados donde necesite pasar la informacion de una pizza, lo hago de una manera
+        //estandard, la serializacion de un lado y deserializacion del otro del objeto entero.
+        intent.putExtra("pizza", pizzaSerializada);
         context.startActivity(intent);
     }
 }
