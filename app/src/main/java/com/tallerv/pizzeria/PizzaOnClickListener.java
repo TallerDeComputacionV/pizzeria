@@ -1,6 +1,8 @@
 package com.tallerv.pizzeria;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
@@ -10,22 +12,30 @@ import android.widget.Toast;
 public class PizzaOnClickListener implements View.OnClickListener{
 
     private Context context;
-    private String texto;
+    private Pizza pizza;
 
     /**
      *
      * @param context necesario para inflar el ToastAlert
-     * @param texto texto a visualizar en el alert luego del evento onClick
+     * @param pizza la pizza con los datos a pasarle al Details en onClick
      */
-    public PizzaOnClickListener(Context context, String texto) {
+    public PizzaOnClickListener(Context context, Pizza pizza) {
         this.context = context;
-        this.texto = texto;
+        this.pizza = pizza;
     }
 
     @Override
-    //Comportamiento de respuesta ante el mensaje onCLick (evento)
+    //Actualizamos el metodo onClick para que redirija hacia el detalle de la pizza clickeada ademas del mensaje Toast.
     public void onClick(View view) {
-        //Se "infla" un mensaje con el texto especificado
-        Toast.makeText(context, texto, Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, pizza.getNombre(), Toast.LENGTH_SHORT).show();
+        //Se crea un intent especificando el contexto del que se parte y el .class del activity destino.
+        Intent intent = new Intent(context, DetailsActivity.class);
+        //Agregar extras es opcional, pero necesario para pasar informacion entre acitivties (este es un metodo, hay otros, ya los veremos).
+        intent.putExtra("nombre", pizza.getNombre());
+        intent.putExtra("fotoId", pizza.getFotoId());
+        intent.putExtra("precio", pizza.getPrecio());
+        //Con este metodo se inicia la transicion del intent y queda en el backstack el activity del que venimos para ser recuperado con la
+        //accion backpress.
+        context.startActivity(intent);
     }
 }

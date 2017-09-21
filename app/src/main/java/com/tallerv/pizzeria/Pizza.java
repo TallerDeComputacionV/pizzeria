@@ -82,7 +82,8 @@ public class Pizza {
         ((TextView) pizzaItem.findViewById(R.id.nombre)).setText(getNombre());
         ((ImageView) pizzaItem.findViewById(R.id.foto)).setImageResource(getFotoId());
         ((TextView) pizzaItem.findViewById(R.id.precio)).setText(String.valueOf(getPrecio()));
-        pizzaItem.setOnClickListener(new PizzaOnClickListener(context, getNombre()));
+        //Ahora el segundo parametro es la pizza en si (esta instancia, se referencia con la palabra this, que es la Pizza actual).
+        pizzaItem.setOnClickListener(new PizzaOnClickListener(context, this));
         return pizzaItem;
     }
 }

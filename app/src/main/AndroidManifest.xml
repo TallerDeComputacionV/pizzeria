@@ -15,5 +15,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- Todos los activities que mostremos en pantalla deben figurar en este archivo de Manifest. -->
+        <activity android:name=".DetailsActivity" />
     </application>
 </manifest>
