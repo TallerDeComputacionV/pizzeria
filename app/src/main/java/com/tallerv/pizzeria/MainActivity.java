@@ -11,7 +11,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Asi queda con el refactor de parsePizza implementado como metodo de la clase Pizza.
         View viewMuzza = new Pizza(getBaseContext(), "Muzzarela", R.drawable.muzzarella, 10).parsePizza();
         View viewNapo = new Pizza(getBaseContext(), "Napolitana", R.drawable.napolitana, 15).parsePizza();
         View viewJamon = new Pizza(getBaseContext(), "Jamon y queso", R.drawable.jamon, 20).parsePizza();
