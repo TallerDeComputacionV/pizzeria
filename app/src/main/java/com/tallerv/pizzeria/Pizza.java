@@ -70,17 +70,5 @@ public class Pizza {
     public void setContext(Context context) {
         this.context = context;
     }
-
-    /**
-     * @return la vista representativa a la pizza
-     */
-    public View parsePizza() {
-        View pizzaItem = LayoutInflater.from(context).inflate(R.layout.pizza_item, null, false);
-        ((TextView) pizzaItem.findViewById(R.id.nombre)).setText(getNombre());
-        ((ImageView) pizzaItem.findViewById(R.id.foto)).setImageResource(getFotoId());
-        ((TextView) pizzaItem.findViewById(R.id.precio)).setText(String.valueOf(getPrecio()));
-        pizzaItem.setOnClickListener(new PizzaOnClickListener(context, this));
-        return pizzaItem;
-    }
 }
 

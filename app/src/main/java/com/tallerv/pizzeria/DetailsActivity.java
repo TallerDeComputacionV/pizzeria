@@ -16,13 +16,9 @@ public class DetailsActivity extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
 
-        //La pizza serializada ingresada por extra.
         String pizzaSerializada = extras.getString("pizza");
-        //Deserializo la pizza a su representacion de objeto java.
         Pizza pizza = new Gson().fromJson(pizzaSerializada, Pizza.class);
 
-        //Utilizo los datos de la pizza desde su representacion objeto para
-        //rellenar su representacion visual.
         ImageView fotoIv = (ImageView) findViewById(R.id.foto);
         fotoIv.setImageResource(pizza.getFotoId());
         TextView nombreTv = (TextView) findViewById(R.id.nombre);
