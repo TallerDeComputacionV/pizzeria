@@ -32,24 +32,17 @@ public class LoginActivity extends AppCompatActivity {
         passwordEt = (EditText) findViewById(R.id.password_et);
         enterBtn = (Button) findViewById(R.id.enter_btn);
 
-        //Obtengo una instancia de las SharedPreferences.
         sharedPreferences = context.getSharedPreferences(getResources().getString(R.string.app_name), MODE_PRIVATE);
-        //Consulto por los valores de las claves que me interesan.
         String username = sharedPreferences.getString("username", "");
         String password = sharedPreferences.getString("password", "");
-        //Si ambas existen significa que se hizo login anteriormente.
         if(!username.isEmpty() && !password.isEmpty()) {
-            //Voy al menu de pizzas.
             gotoPizzaMenu();
         } else {
-            //Defino el comportamiento para onClick del boton Ingresar.
             enterBtn .setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     if (isLoginSuccessful(userEt.getText().toString(), passwordEt.getText().toString())) {
-                        //persistencia resuleta con SharedPreferences
                         sharedPreferences = context.getSharedPreferences(getResources().getString(R.string.app_name), MODE_PRIVATE);
-                        //Guardo asincronicamente las credenciales de logueo
                         sharedPreferences.edit()
                                 .putString("username", userEt.getText().toString())
                                 .putString("password", passwordEt.getText().toString())
@@ -65,9 +58,7 @@ public class LoginActivity extends AppCompatActivity {
      * Redirige hacia la vista de menu de pizzas.
      */
     private void gotoPizzaMenu() {
-        //Llamo al ciclo de cierre del LoginActivity.
         finish();
-        //Redirijo hacia el MainActivity.
         startActivity(new Intent(context, MainActivity.class));
     }
 

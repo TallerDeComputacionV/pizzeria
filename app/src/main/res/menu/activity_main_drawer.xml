@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Asi se declara un menu -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <!-- Agrupo bajo un mismo titulo -->
+    <item android:title="Comunicar">
+        <!-- Menu adentro del menu (mas de un item) -->
+        <menu>
+            <item
+                android:id="@+id/share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Compartir" />
+            <item
+                android:id="@+id/contact"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Contacto" />
+        </menu>
+    </item>
+
+    <!-- Item fuera del grupo "Comunicar" alineado como ultimo en la lista (orderInCategori mas grande que los demas items) -->
+    <item
+        android:orderInCategory="100"
+        android:id="@+id/close_session"
+        android:icon="@drawable/power"
+        android:title="Cerrar Sesion" />
+
+</menu>
