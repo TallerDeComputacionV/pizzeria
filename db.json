@@ -1,0 +1,32 @@
+{
+  "pizzas": [
+    {
+      "id": 0,
+      "nombre": "Muzzarella",
+      "description": "Pizza con queso",
+      "precio": 10,
+      "fotoId": "2130837601"
+    },
+    {
+        "id": 1,
+        "nombre": "Napolitana",
+        "description": "Pizza con tomate",
+        "precio": 15,
+        "fotoId": "2130837602"
+    },
+    {
+        "id": 2,
+        "nombre": "Muzzarella con Jamon",
+        "descripcion": "Pizza con jamon",
+        "precio": 20,
+        "fotoId": "2130837600"
+    },
+    {
+        "id": 3,
+        "nombre": "Calabresa",
+        "descripcion": "Piza con salame",
+        "precio": 25,
+        "fotoId": "2130837590"
+    }
+  ]
+}

@@ -1,15 +1,12 @@
 <resources>
 
-    <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Colores principales de la App -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item> <!-- Este se aplica automaticamente al statusBar -->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
-        <!-- Importante para tener el toolbar de las support libraries -->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>

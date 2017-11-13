@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- FrameLayout porque el FAB esta arriba del DrawerLayout (layouts encimados) -->
 <FrameLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <!-- Necesario para mostrar el hamburguer en el toolbar y asociarlo al navigation -->
     <android.support.v4.widget.DrawerLayout
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/drawer_layout"
@@ -15,14 +13,11 @@
         android:fitsSystemWindows="true"
         tools:openDrawer="start">
 
-        <!-- El toolbar es una vista mas, por lo que necesitamos ordenarla dentro de algun layout
-              para que este por encima del contenido (en este caso el ListView) -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <!-- Importantes: background -->
             <android.support.v7.widget.Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
@@ -37,7 +32,6 @@
                 android:dividerHeight="16.0sp"/>
         </LinearLayout>
 
-        <!-- Importantes: headerLayout, layout_gravity, fitsSystemWindows, menu-->
         <android.support.design.widget.NavigationView
             android:id="@+id/nav_view"
             android:layout_width="wrap_content"
@@ -48,8 +42,6 @@
             app:menu="@menu/activity_main_drawer" />
     </android.support.v4.widget.DrawerLayout>
 
-    <!-- Importantes: srcCompat, layout_gravity, margin -->
-    <!-- El color que tiene se le aplica automaticamete, es el colorAccent del Theme -->
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
